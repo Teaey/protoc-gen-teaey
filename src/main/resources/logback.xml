@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 根节点，设置为调试模式 自动重扫描配置文件 间隔为30秒 -->
+<!--<configuration debug="false" scan="false" scanPeriod="30 seconds">-->
+<configuration debug="false" scan="false" scanPeriod="30 seconds">
+    <!-- 定义控制台输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %date{yyyy-MM-dd HH:mm:ss} %level [%thread] [%file:%line] --> %msg%n %ex
+            </pattern>
+        </encoder>
+    </appender>
+	<!-- 每日滚动并压缩 -->
+	<appender name="DAILY_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>../protoc-gen-teaey.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>
+                ../protoc-gen-teaey.%d{yyyyMMdd}.zip
+			</FileNamePattern>
+			<MaxHistory>100</MaxHistory>
+		</rollingPolicy>
+		<encoder>
+			<!-- If immediateFlush is set to 'false' and if appenders are not closed properly when your application exits, then logging events not yet written to disk may be lost.  -->
+			<!-- <immediateFlush>false</immediateFlush> -->
+			<charset>utf-8</charset>
+			<pattern>
+				%date{yyyy-MM-dd HH:mm:ss} %level [%thread] [%file:%line] --> %msg%n %ex
+            </pattern>
+		</encoder>
+	</appender>
+	<root level="debug">
+        <!-- <appender-ref ref="CONSOLE" />生成环境建议注掉 -->
+		<appender-ref ref="DAILY_LOG" />
+	</root>
+</configuration>

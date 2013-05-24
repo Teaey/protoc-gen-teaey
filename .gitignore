@@ -1,6 +1,14 @@
 *.class
-
+*.gitignore
 # Package Files #
 *.jar
 *.war
 *.ear
+*.log
+*.lock
+*.swp
+.idea
+target
+.idea/*
+target/*
+*.iml
