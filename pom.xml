@@ -25,7 +25,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>ProtocGenTeaey</mainClass>
+                                    <mainClass>cn.teaey.proto.ProtocGenTeaey</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
