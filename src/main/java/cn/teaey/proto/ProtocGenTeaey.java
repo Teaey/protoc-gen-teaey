@@ -24,16 +24,7 @@ public final class ProtocGenTeaey
         try
         {
             //CodeGeneratorResponse.File.Builder fb = CodeGeneratorResponse.File.newBuilder();
-            //here get all the proto files
-            for (String each : request.getFileToGenerateList())
-            {
-                logger.info("file_to_generate:" + each);
-            }
-            //here get all messages descriptior
-            for (FileDescriptorProto each : request.getProtoFileList())
-            {
-                logger.info("proto_file:" + each.toString());
-            }
+            new CodeGenerator.DefaultCodeGenerator().generate(request);
         } catch (Exception e)
         {
             StringWriter sw = new StringWriter();
