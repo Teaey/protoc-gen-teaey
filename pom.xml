@@ -3,9 +3,9 @@
     <groupId>protoc-plugin</groupId>
     <version>1.0-SNAPSHOT</version>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>protoc-gen-teaey</artifactId>
+    <artifactId>cn.teaey</artifactId>
     <packaging>jar</packaging>
-    <name>protoc-gen-teaey</name>
+    <name>protoc-gen-fenrisulfr</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
